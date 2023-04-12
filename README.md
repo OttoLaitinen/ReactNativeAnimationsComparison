@@ -21,7 +21,7 @@ The task given in this comparison case study was to implement an animated alert 
 
 ## Technical Specifications
 
-To be able to detect and act upon user's gestures an additional library called [React Native Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/docs/) was used.
+To be able to detect and act upon user's gestures an additional library called [React Native Gesture Handler](https://docs.swmansion.com/react-native-gesture-handler/docs/) (also by Software Mansion) was used.
 
 Other software libraries or packages and their respective versions can be found from the `package.json` file.
 
@@ -31,4 +31,16 @@ Video showing how the completed alert banners function.
 
 https://user-images.githubusercontent.com/33544222/231484696-9d45e2e4-0376-477b-a924-74b8e64a9463.mov
 
+## Code
+
+Please see [`AnimatedAlertBanner.tsx`](https://github.com/OttoLaitinen/ReactNativeAnimationsComparison/blob/main/src/components/AlertBanner/AnimatedAlertBanner.tsx) and [`ReanimatedAlertBanner.tsx`](https://github.com/OttoLaitinen/ReactNativeAnimationsComparison/blob/main/src/components/AlertBanner/ReanimatedAlertBanner.tsx) for the relevant code.
+
+To make comparing the two different libraries as fair as possible all non-animation related code was kept as similar as possible.
+
+## Conclusions
+
+Though both libraries were able to achieve the 6 simple requirements given for the alert banner, it is clear for me that the Reanimated library is the superior way to handle animations in a React Native application. 
+
+The API Reanimated gives for handling animations is intuitive and allows for a really simple way of handling gestures together with animations, which shows in the amount of code needing to be written:
+only for this rather simple component the Animated-library needed ~60% more lines of code to complete it (78 vs 127). Though the amount of code in itself isn't a perfect metric this kind of difference it is a telling example of how the Reanimated API simplifies things through understandable abstractions.
 
