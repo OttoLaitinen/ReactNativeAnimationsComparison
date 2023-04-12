@@ -44,3 +44,6 @@ Though both libraries were able to achieve the 6 simple requirements given for t
 The API Reanimated gives for handling animations is intuitive and allows for a really simple way of handling gestures together with animations, which shows in the amount of code needing to be written:
 only for this rather simple component the Animated-library needed ~60% more lines of code to complete it (78 vs 127). Though the amount of code in itself isn't a perfect metric this kind of difference it is a telling example of how the Reanimated API simplifies things through understandable abstractions.
 
+Other reasons to pick Reanimated vs. Animated library: 
+- Reanimated is able to work with newer versions of React Native Gesture Handler whereas Animated is only compatible with older unsupported versions ([source](https://docs.swmansion.com/react-native-gesture-handler/docs/api/gestures/gesture-detector)).
+- Reanimated allows for smoother and more efficient animations through "worklets" ([source](https://docs.swmansion.com/react-native-reanimated/docs)).
