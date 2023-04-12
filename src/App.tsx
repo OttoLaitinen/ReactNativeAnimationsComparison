@@ -3,38 +3,44 @@ import React, {useState} from 'react';
 import {Button, StatusBar} from 'react-native';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 
-import AnimatedAlertBanner from './components/AlertBanner/AnimatedAlertBanner';
-import ReanimatedAlertBanner from './components/AlertBanner/ReanimatedAlertBanner';
+import {
+  AnimatedAlertBanner,
+  ReanimatedAlertBanner,
+} from './components/AlertBanner/';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 
 function App(): JSX.Element {
   const [renderAnimatedBanner, setRenderAnimatedBanner] = useState(false);
   const [renderReanimatedBanner, setRenderReanimatedBanner] = useState(false);
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle="dark-content" />
+    // eslint-disable-next-line react-native/no-inline-styles
+    <GestureHandlerRootView style={{flex: 1}}>
+      <SafeAreaProvider>
+        <StatusBar barStyle="dark-content" />
 
-      <StyledSafeAreaView>
-        {renderAnimatedBanner && (
-          <AnimatedAlertBanner setVisibility={setRenderAnimatedBanner} />
-        )}
-        {renderReanimatedBanner && (
-          <ReanimatedAlertBanner setVisibility={setRenderReanimatedBanner} />
-        )}
+        <StyledSafeAreaView>
+          {renderAnimatedBanner && (
+            <AnimatedAlertBanner setVisibility={setRenderAnimatedBanner} />
+          )}
+          {renderReanimatedBanner && (
+            <ReanimatedAlertBanner setVisibility={setRenderReanimatedBanner} />
+          )}
 
-        <PageContainer>
-          <ButtonContainer>
-            <Button
-              title="Animated"
-              onPress={() => setRenderAnimatedBanner(true)}
-            />
-            <Button
-              title="Reanimated"
-              onPress={() => setRenderReanimatedBanner(true)}
-            />
-          </ButtonContainer>
-        </PageContainer>
-      </StyledSafeAreaView>
-    </SafeAreaProvider>
+          <PageContainer>
+            <ButtonContainer>
+              <Button
+                title="Animated"
+                onPress={() => setRenderAnimatedBanner(true)}
+              />
+              <Button
+                title="Reanimated"
+                onPress={() => setRenderReanimatedBanner(true)}
+              />
+            </ButtonContainer>
+          </PageContainer>
+        </StyledSafeAreaView>
+      </SafeAreaProvider>
+    </GestureHandlerRootView>
   );
 }
 
